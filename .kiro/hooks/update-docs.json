@@ -1,0 +1,14 @@
+{
+  "version": "v1",
+  "hooks": [
+    {
+      "name": "Update Documentation",
+      "trigger": "PostToolUse",
+      "matcher": "fs_write|str_replace|fs_append",
+      "action": {
+        "type": "agent",
+        "prompt": "Kiro just wrote or modified a code file. Please update the README to reflect the changes:\n1. Check if the modified file introduces new functions, classes, or modules\n2. Update the README with any new usage instructions or examples\n3. Add or update docstring/inline comments if missing from new code\n4. Keep the README accurate and concise — remove outdated information\n5. If no README exists yet, create one covering what the project does, how to install dependencies, and how to run it"
+      }
+    }
+  ]
+}
